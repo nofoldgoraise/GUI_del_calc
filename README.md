@@ -31,7 +31,7 @@ exe 파일 없이 소스코드로 직접 실행합니다. Python만 설치되어
 \`\`\`bash
 git clone https://github.com/nofoldgoraise/GUI_del_calc.git
 cd GUI_del_calc
-python 파일이름.py
+python GUI_del_calc_V2.py
 \`\`\`
 
 별도 라이브러리 설치가 필요 없습니다. (\`tkinter\`는 Python 기본 내장 라이브러리입니다.)
