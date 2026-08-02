@@ -6,6 +6,7 @@ window = Tk()
 bg_color = "#2B3240"      # 창 배경
 label_bg = "#2B3240"      # label 배경
 frame_bg = "#2B3240"      # 프레임 배경
+frame_bg2 = "#1A2B42"
 font_color = "#1DB584"    # 기본 글자색
 button_bg = "#1DB584"      # 버튼 배경 (계산 버튼 등 primary action)
 highlight_color = "#5FFFD4"  # 순수익 등 강조용
@@ -58,6 +59,12 @@ title_label_font = ("나눔고딕", 20, "bold") # Label 폰트 (제목)
 def make_label(frame, label_text, label_font = None, label_row = None, label_column = None, label_sticky = None): # Label 생성 함수
   label = Label(frame)
   label.config(text = label_text, font = label_font, bg = label_bg, fg = font_color)
+  label.grid(row = label_row, column = label_column, sticky = label_sticky, padx = 5, pady = 5)
+  return label
+
+def make_result_label(frame, label_text, label_font = None, label_row = None, label_column = None, label_sticky = None): # Label 생성 함수
+  label = Label(frame)
+  label.config(text = label_text, font = label_font, bg = frame_bg2, fg = font_color)
   label.grid(row = label_row, column = label_column, sticky = label_sticky, padx = 5, pady = 5)
   return label
 
@@ -177,20 +184,24 @@ save_button = make_button(frame3, save_button_text, save_button_command, button_
 close_button = make_button(frame3, close_button_text, close_button_command, button_row = 0, button_column = 3) # Button 생성 (종료)
 
 frame4 = Frame(window) # Frame 생성 (결과창)
-frame4.config(bg = frame_bg)
+frame4.config(bg = frame_bg2)
 frame4.pack()
 
-real_work_time_result_label = make_label(frame4, real_work_time_result_default_text) # Label 생성 (결과)
-today_pay_result_label = make_label (frame4, today_pay_result_default_text)
-today_count_result_label = make_label (frame4, today_count_result_default_text)
-hour_count_result_label = make_label (frame4, hour_count_result_default_text)
-today_money_result_label = make_label (frame4, today_money_result_default_text)
-count_price_result_label = make_label (frame4, count_price_result_default_text)
-profit_result_label = make_label (frame4, profit_result_default_text) # Label 생성 (결과)
+real_work_time_result_label = make_result_label(frame4, real_work_time_result_default_text) # Label 생성 (결과)
+today_pay_result_label = make_result_label (frame4, today_pay_result_default_text)
+today_count_result_label = make_result_label (frame4, today_count_result_default_text)
+hour_count_result_label = make_result_label (frame4, hour_count_result_default_text)
+today_money_result_label = make_result_label (frame4, today_money_result_default_text)
+count_price_result_label = make_result_label (frame4, count_price_result_default_text)
+profit_result_label = make_result_label (frame4, profit_result_default_text) # Label 생성 (결과)
 
-hello_label = make_label(frame4, hello_label_text, hello_label_text_font, label_row = 8, label_column = 0) # Label 생성 (인사문구)
+frame5 = Frame(window) # Frame 생성 (인사, 안내)
+frame5.config(bg = frame_bg)
+frame5.pack()
 
-info_label = make_label(frame4, info_label_text, info_label_text_font, label_row = 9, label_column = 0) # Label 생성 (안내)
+hello_label = make_label(frame5, hello_label_text, hello_label_text_font, label_row = 0, label_column = 0) # Label 생성 (인사문구)
+
+info_label = make_label(frame5, info_label_text, info_label_text_font, label_row = 1, label_column = 0) # Label 생성 (안내)
 
 window.bind("<Return>", calc_button_command)
 
