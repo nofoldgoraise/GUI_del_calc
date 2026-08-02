@@ -19,10 +19,8 @@
 
 ## 스크린샷
 
-<img width="495" height="625" alt="image" src="https://github.com/user-attachments/assets/06864a6b-7595-41c2-a52e-b728e44fd364" />
-<img width="493" height="624" alt="image" src="https://github.com/user-attachments/assets/8602ba35-05c8-491a-9c59-68a6be8be3cd" />
-
-
+<img width="495" height="625" alt="image" src="https://github.com/user-attachments/assets/f1084aba-331e-4024-8ac6-ae98fbdd87c2" />
+<img width="494" height="625" alt="image" src="https://github.com/user-attachments/assets/cda163ab-e002-484a-9130-c825aa60dcd7" />
 
 ## 실행 방법
 
